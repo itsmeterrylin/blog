@@ -1,9 +1,5 @@
-import { Posts } from "./posts";
-import { getPosts } from "./get-posts";
+import { redirect } from 'next/navigation';
 
-export const revalidate = 60;
-
-export default async function Home() {
-  const posts = await getPosts();
-  return <Posts posts={posts} />;
+export default function Home() {
+  redirect('/now');
 }
