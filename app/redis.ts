@@ -16,6 +16,17 @@ class MockRedis {
     const hashKey = `${key}:${field}`;
     return this.store.get(hashKey) || 0;
   }
+  
+  async hgetall(key: string) {
+    const result: { [key: string]: string } = {};
+    for (const [storeKey, value] of this.store.entries()) {
+      if (storeKey.startsWith(`${key}:`)) {
+        const field = storeKey.substring(key.length + 1);
+        result[field] = String(value);
+      }
+    }
+    return Object.keys(result).length > 0 ? result : null;
+  }
 }
 
 let redis;

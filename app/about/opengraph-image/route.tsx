@@ -6,10 +6,10 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import commaNumber from "comma-number";
 
-// Image
-const rauchgPhoto = toArrayBuffer(
-  readFileSync(join(process.cwd(), "public/images/rauchg-3d4cecf.gray.jpg"))
-);
+// Note: Add your own profile image later if needed
+// const profilePhoto = toArrayBuffer(
+//   readFileSync(join(process.cwd(), "public/images/terry-lin.jpg"))
+// );
 
 // Fonts
 const fontsDir = join(process.cwd(), "fonts");
@@ -37,33 +37,15 @@ export async function GET() {
         style={font("Inter 300")}
       >
         <main tw="flex grow pt-4 w-full justify-center items-center">
-          <div tw="flex flex-row">
-            <div tw="flex">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                tw="rounded-full h-74"
-                alt="Guillermo Rauch"
-                // @ts-ignore
-                src={rauchgPhoto}
-              />
+          <div tw="flex flex-col items-center justify-center">
+            <div tw="text-[64px] mb-7" style={font("Inter 500")}>
+              Terry Lin
             </div>
-
-            <div tw="flex flex-col px-10 grow text-[28px] h-70 justify-center">
-              <div tw="text-[64px] mb-7" style={font("Inter 500")}>
-                Guillermo Rauch
-              </div>
-              <div tw="flex mb-5" style={font("Roboto Mono 400")}>
-                <span tw="text-gray-400 mr-3">&mdash;</span> CEO and Founder of
-                Vercel
-              </div>
-              <div tw="flex mb-5" style={font("Roboto Mono 400")}>
-                <span tw="text-gray-400 mr-3">&mdash;</span> Creator of Next.js,
-                Socket.IO, Mongoose
-              </div>
-              <div tw="flex" style={font("Roboto Mono 400")}>
-                <span tw="text-gray-400 mr-3">&mdash;</span> Lives in San
-                Francisco, CA
-              </div>
+            <div tw="flex mb-5 text-[32px]" style={font("Roboto Mono 400")}>
+              <span tw="text-gray-400 mr-3">&mdash;</span> Software Engineer & Technology Enthusiast
+            </div>
+            <div tw="flex text-[28px]" style={font("Roboto Mono 400")}>
+              <span tw="text-gray-400 mr-3">&mdash;</span> terrylin.net
             </div>
           </div>
         </main>
@@ -102,9 +84,10 @@ function font(fontFamily: string) {
   return { fontFamily };
 }
 
-function toArrayBuffer(buffer) {
-  return buffer.buffer.slice(
-    buffer.byteOffset,
-    buffer.byteOffset + buffer.byteLength
-  );
-}
+// Helper function for converting buffer to array buffer (if needed later)
+// function toArrayBuffer(buffer) {
+//   return buffer.buffer.slice(
+//     buffer.byteOffset,
+//     buffer.byteOffset + buffer.byteLength
+//   );
+// }
