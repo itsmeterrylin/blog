@@ -27,6 +27,15 @@ class MockRedis {
     }
     return Object.keys(result).length > 0 ? result : null;
   }
+  
+  async set(key: string, value: any, options?: any) {
+    this.store.set(key, value);
+    return "OK";
+  }
+  
+  async get(key: string) {
+    return this.store.get(key) || null;
+  }
 }
 
 let redis;
