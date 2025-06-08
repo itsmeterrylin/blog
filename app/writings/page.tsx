@@ -4,11 +4,11 @@ import { getPosts } from "../get-posts";
 export const revalidate = 60;
 
 export const metadata = {
-  title: 'Learning Log',
-  description: 'Terry Lin\'s thoughts on technology, programming, and more',
+  title: 'Retrospectives',
+  description: 'Terry Lin\'s retrospectives on building, learning, and growing',
   openGraph: {
-    title: 'Learning Log',
-    description: 'Terry Lin\'s thoughts on technology, programming, and more',
+    title: 'Retrospectives',
+    description: 'Terry Lin\'s retrospectives on building, learning, and growing',
   }
 }
 

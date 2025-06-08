@@ -43,7 +43,7 @@ export async function GET() {
             </div>
             <div tw="flex mb-5 text-[32px]" style={font("Roboto Mono 400")}>
               <span tw="text-gray-400 mr-3">&mdash;</span> Software Engineer & Technology Enthusiast
-            </div>
+              </div>
             <div tw="flex text-[28px]" style={font("Roboto Mono 400")}>
               <span tw="text-gray-400 mr-3">&mdash;</span> terrylin.net
             </div>

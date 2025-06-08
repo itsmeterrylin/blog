@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: 'Now',
   description: 'What Terry Lin is focused on now',
@@ -9,14 +11,65 @@ export const metadata = {
 
 # Now
 
-*Last updated: June 2025*
-
 *This is a [now page](https://nownownow.com/about), inspired by [Derek Sivers](https://sive.rs/now). It tells you what I'm focused on at this point in my life.*
+
+
+<div className="float-right ml-5 mb-5">
+  <Image
+    src="/images/terry-avatar.jpg"
+    alt="Terry Lin"
+    width={160}
+    height={160}
+    className="rounded-full object-cover"
+    priority
+  />
+</div>
+
+*Last updated: June 2025*
 
 ## Current Focus
 
-## Recent Projects
+**Day Job:** Senior Product Manager at CB Insights, focused on search products and browser extension. Most of my work involves backend systems, data models, and (increasingly) AI-powered features in search.
 
-## Currently Reading
+**Side Projects:** Cooper’s Corner is an iOS fitness tracker that logs voice workouts using your iPhone and Apple Watch. It captures exercises, weights and reps without breaking your flow in the gym and provides helps drive consistency habits with analytics on your 7 / 30 / 90 / 365-day history.
 
-## Location 
+I’m tackling the full stack (Swift, Python, Fast API, Supabase) — using Cursor to turn unstructured voice transcripts into structured database entries. The backend technical challenge is balancing recall and precision through prompt engineering and data schema design. On the frontend, I'm learning design systems, typography, and color theory while building the complete interaction flow.
+
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
+  <img 
+    src="/images/coppers-corner-june-2025.png" 
+    alt="Cooper's Corner fitness app screenshots showing exercise history and workout tracking" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      borderRadius: '30px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
+## Location & Life
+
+Based in NYC since 2017, living with my rescue dog Copper (a street dog from Puerto Rico I found through [Animal Lighthouse Rescue](https://www.alrcares.com/)) and my cat Jade (a former teen mom I adopted from [NYC Animal Care Center](https://www.nycacc.org/)). 
+
+I've been fostering kittens for the [NYC Animal Care Center](https://www.nycacc.org/) for four years now—close to 100 little ones have passed through. It's incredibly rewarding work, and Copper and Jade are surprisingly patient with all the temporary houseguests.
+
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
+  <img 
+    src="/images/copper-jade.png" 
+    alt="Copper and Jade - Terry's rescue dog and cat" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      borderRadius: '30px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
+## Goals
+
+Over the next 2-4 months, I'm focused on locking in the frontend designs for the fitness app. Getting in the weeds with UI/UX design is new territory for me, I'm spending extra time getting the interaction flows right. The goal is to have something that truly solves the workout logging problem in a way that feels natural and effortless. 
+
+
+
