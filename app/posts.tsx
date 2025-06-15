@@ -88,6 +88,7 @@ function List({ posts, sort }) {
     <ul>
       {sortedPosts.map((post, i: number) => {
         const year = getYear(post.date);
+        const monthDay = getMonthDay(post.date);
         const firstOfYear =
           !sortedPosts[i - 1] || getYear(sortedPosts[i - 1].date) !== year;
         const lastOfYear =
@@ -102,16 +103,10 @@ function List({ posts, sort }) {
                 ${lastOfYear ? "border-b-0" : ""}
               `}
               >
-                <span
-                  className={`py-3 flex grow items-center ${
-                    !firstOfYear ? "ml-14" : ""
-                  }`}
-                >
-                  {firstOfYear && (
-                    <span className="w-14 inline-block self-start shrink-0 text-gray-500 dark:text-gray-500">
-                      {year}
-                    </span>
-                  )}
+                <span className="py-3 flex grow items-center">
+                  <span className="w-14 inline-block self-start shrink-0 text-gray-500 dark:text-gray-500">
+                    {firstOfYear ? year : monthDay}
+                  </span>
 
                   <span className="grow dark:text-gray-100">{post.title}</span>
 
@@ -130,4 +125,11 @@ function List({ posts, sort }) {
 
 function getYear(date: string) {
   return new Date(date).getFullYear();
+}
+
+function getMonthDay(date: string) {
+  return new Date(date).toLocaleDateString('en-US', { 
+    month: 'short', 
+    day: 'numeric' 
+  });
 }
