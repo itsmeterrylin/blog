@@ -1,0 +1,85 @@
+export const metadata = {
+  title: "June 15th: From Figma designs to iOS implementation",
+  description: 'Successfully implemented last week\'s Figma designs into the iOS app and learned key workflows for AI-assisted development',
+  openGraph: {
+    title: "June 15th: From Figma designs to iOS implementation - and learning to work with AI along the way",
+    description: 'Successfully implemented last week\'s Figma designs into the iOS app and learned key workflows for AI-assisted development',
+  }
+}
+
+*Published: June 15, 2025*
+
+This week I focused on taking the designs we created last week and implementing them into the iOS app. What I thought would be straightforward turned into a back and forth loop in working with AI tools and understanding the nuances of design-to-code workflows.
+
+## ✅ What Went Well 
+
+**Design system foundation paying off**: Having spent the last couple weeks building out the design system in Figma, I can now design much faster. More importantly, I can implement faster because I have a clear foundation to work from. The upfront investment in systematic design is finally showing dividends.
+
+**Figma MCP workflow breakthrough**: I discovered a much better approach for working with LLMs and Figma designs. Instead of giving screenshots with multiple elements (which confuses the AI), I learned to isolate specific components in Figma and MCP directly to that node ID. This gives the AI much less room to get confused and makes the implementation more focused.
+
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
+  <img 
+    src="/images/figma-mcp-workflow.png" 
+    alt="Figma MCP workflow showing isolated component selection for better AI implementation" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      borderRadius: '30px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
+**Consistent design-to-code capability**: The biggest win is that I can now confidently take a design from Figma and implement it correctly within a predictable timeframe. This feels like crossing a major threshold—I'm no longer guessing how long design implementation will take.
+
+## ❌ What Didn't Go Well 
+
+**The infamous "last 20%" tuning**: Even with better Figma MCP workflows, LLMs still make assumptions that require significant cleanup. The most frustrating example: I had designed an exercise history component where users scroll through past workouts, but the LLM decided to put it in its own container with independent scrolling. This meant users could only see 1-2 exercises before hitting a tiny scroll area instead of scrolling through the entire page naturally.
+
+**LLM over-engineering**: LLMs consistently try to "help" by adding things you didn't ask for. They'll add placeholder text when you give them a static image, duplicate existing features, or ignore your color system in favor of what they think looks better. For a simple loading screen update where I provided the exact static image to use, the LLM still assumed it needed to add more text elements.
+
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
+  <img 
+    src="/images/z-layers-issue.png" 
+    alt="Z-layer layout issues showing how LLM assumptions about containers break intended scrolling behavior" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      borderRadius: '30px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
+**2+ hours of interaction cleanup**: What should have been a straightforward implementation turned into hours of back-and-forth telling the AI to remove duplicated features, fix color inconsistencies, and correct layout assumptions. It's still faster than coding from scratch, but the constant "no, don't add that" and "use the actual colors from the design system" gets tedious.
+
+## 💡 What I Learned 
+
+**State definition is everything**: If you don't explicitly define UI states upfront, LLMs will assume states for you—and that's where everything goes wrong. You end up in this weird QA loop where the AI assumes something you didn't want, you correct it, but since you never defined the complete state picture, you just create new assumptions. This is especially dangerous with React state and rendering, where unclear state definitions can create bugs that are hard to trace.
+
+**The solution is methodical state mapping**: Before any implementation, I need to map out every state systematically: what should it look like, what triggers the change, what's the expected behavior, what happens if something fails. It's like creating a blueprint that prevents the AI from filling in gaps with its own assumptions.
+
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
+  <img 
+    src="/images/state-mapping.png" 
+    alt="State mapping table showing systematic approach to defining UI states, triggers, and transitions" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      borderRadius: '30px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+    }} 
+  />
+</div>
+
+## What I'm Doing Next Week 🚀
+
+**Recording screen redesign with systematic state mapping**: I'm applying this week's learning about state definition to redesign the recording screen completely. Instead of jumping into implementation, I'm going to map out every state first in Figma.
+
+**Daily component approach**: My plan is methodical—1-2 hours during weekdays working on one component per day. This should give me time to think through each state thoroughly without rushing.
+
+**Weekend integration**: Friday after work I'll combine all the components into a cohesive design, then Saturday I'll do the actual implementation. This way I have a complete, well-thought-out design system before any LLM touches the code.
+
+This approach should eliminate the 2+ hour cleanup cycles I experienced this week, since I'll have every state and interaction defined upfront.
+
+--- 
