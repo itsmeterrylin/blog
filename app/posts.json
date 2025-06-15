@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "id": "june-15th-retrospective",
+      "date": "June 15, 2025",
+      "title": "June 15th: From Figma designs to iOS implementation"
+    },
+    {
       "id": "june-8th-retrospective",
       "date": "June 8, 2025",
       "title": "June 8th: Design systems, AI icons, and frontend struggles."
