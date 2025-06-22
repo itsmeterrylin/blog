@@ -1,0 +1,48 @@
+export const metadata = {
+  title: "June 22nd: Three-pronged development push",
+  description: 'Tackled UI redesign, security vulnerabilities, and offline functionality - learning the balance between shipping fast and building right',
+  openGraph: {
+    title: "June 22nd: Three-pronged development push - UI, security, and offline fixes",
+    description: 'Tackled UI redesign, security vulnerabilities, and offline functionality - learning the balance between shipping fast and building right',
+  }
+}
+
+*Published: June 22, 2025*
+
+This week I worked on three completely different areas of the app: a major UI redesign for the Record screen, fixing critical security vulnerabilities throughout the codebase, and solving persistent offline queue processing issues. It was a week that highlighted the tension between moving fast and building things properly—and how technical debt always finds a way to demand attention.
+
+## ✅ What Went Well 
+
+**Record screen redesign completed end-to-end**: Successfully transformed the complex expandable workout cards into a clean timeline-based design. The systematic approach—starting with comprehensive Gherkin user stories, defining all functional requirements upfront, then implementing in phases—proved incredibly effective. The redesign removes 200+ lines of complex expand/collapse logic while achieving better visual consistency with the History tab.
+
+**Comprehensive security audit with immediate fixes**: Identified and documented 22 critical security and performance issues across the entire codebase, from SQL injection vulnerabilities to hardcoded production credentials. The methodical approach of categorizing issues by severity (production blockers vs. technical debt) made it possible to triage effectively. Fixed the most critical issues like removing dev mode JWT bypasses and securing admin endpoints.
+
+**Offline queue auto-processing finally solved**: After weeks of users reporting that workouts stayed "queued for upload" even when network was restored, I systematically debugged the issue and implemented comprehensive fixes. Enhanced pull-to-refresh to trigger offline processing, improved network restoration detection, and added stability delays for reliable auto-sync. The 3-hour focused debugging session paid off with a permanent solution.
+
+## ❌ What Didn't Go Well 
+
+**Technical debt complexity explosion**: What started as a "simple security review" uncovered a massive web of interconnected issues—22 distinct problems ranging from SQL injection risks to architectural flaws like 818-line god classes. The security fixes alone required touching 15+ files across backend and frontend. It's a sobering reminder that "moving fast and breaking things" really does create compounding complexity that eventually demands attention.
+
+**Coordination overhead between three workstreams**: Juggling UI redesign, security fixes, and offline queue debugging simultaneously created mental context switching that slowed progress. Each area required completely different thinking—user experience for the UI, security mindset for vulnerabilities, and network debugging for the queue issues. The lack of focus made each task take longer than it should have.
+
+**Production credentials exposure in source code**: Discovered hardcoded Supabase URLs and API keys committed to the repository—a major security vulnerability that could have been avoided with better development practices from the start. While the fix is straightforward (environment variables), the fact that it happened at all highlighted gaps in my security-first development mindset.
+
+## 💡 What I Learned 
+
+**Security audits should be regular, not reactionary**: This week's deep dive revealed that security issues accumulate silently over time. SQL injection risks, hardcoded credentials, and authentication bypasses didn't appear overnight—they were introduced gradually as I prioritized speed over security. The lesson: schedule monthly security reviews rather than waiting for a "security crisis" to force the issue.
+
+**Documentation-driven development pays compound dividends**: The Record screen redesign succeeded because I started with comprehensive Gherkin user stories and functional requirements before writing any code. In contrast, the security fixes were much more chaotic because I was reverse-engineering requirements from existing (problematic) code. Upfront documentation creates clarity that accelerates implementation and reduces debugging cycles.
+
+**One workstream at a time beats parallel chaos**: While I completed all three workstreams this week, the constant context switching between UI design, security thinking, and network debugging made everything take longer. Each domain requires deep focus and different mental models. Future weeks should focus on one major workstream at a time, with smaller maintenance tasks as buffers rather than primary focus areas.
+
+## What I'm Doing Next Week 🚀
+
+**Implementing the security fixes in production**: With the comprehensive security audit complete, next week I'll execute the 3-phase implementation plan. Focus will be on the critical production blockers first (SQL injection fixes, credential removal, crash fixes), then performance optimizations, then technical debt cleanup. One workstream at a time, just like this week taught me.
+
+**Monthly security review process establishment**: I'll set up a recurring monthly security audit process to prevent the accumulation of vulnerabilities. This includes creating a security checklist template, scheduling regular code reviews focused on security patterns, and establishing environment variable management best practices for all future features.
+
+**Record screen redesign user testing**: With the UI redesign implementation complete, I'll deploy it to TestFlight and gather user feedback on the new timeline-based workflow. The goal is to validate that removing the expand/collapse complexity actually improves the user experience as intended, and identify any edge cases the Gherkin stories might have missed.
+
+This week reinforced that sustainable development requires balancing speed with quality—and that both require dedicated focus rather than scattered attention across multiple complex domains.
+
+--- 
