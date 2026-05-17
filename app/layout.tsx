@@ -1,22 +1,26 @@
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import { themeEffect } from "./theme-effect";
 import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { doge } from "./doge";
 
-const inter = Inter({ subsets: ["latin"] });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
 
 export const metadata = {
   title: "Terry Lin's blog",
   description:
-    "Terry Lin is a software engineer and technology enthusiast writing about programming, web development, and tech insights.",
+    "Terry Lin is a senior product manager in NYC writing about product, engineering, and shipping side projects.",
   openGraph: {
     title: "Terry Lin's blog",
     description:
-      "Terry Lin is a software engineer and technology enthusiast writing about programming, web development, and tech insights.",
+      "Terry Lin is a senior product manager in NYC writing about product, engineering, and shipping side projects.",
     url: "https://terrylin.net",
     siteName: "Terry Lin's blog",
     images: ["/opengraph-image"],
@@ -41,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} antialiased`}
+      className={`${newsreader.className} antialiased`}
       suppressHydrationWarning={true}
     >
       <head>
@@ -52,8 +56,8 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="dark:text-gray-100 max-w-2xl m-auto">
-        <main className="p-6 pt-3 md:pt-6 min-h-screen">
+      <body className="max-w-[680px] m-auto">
+        <main className="p-6 pt-3 md:pt-10 min-h-screen">
           <Header />
           {children}
         </main>

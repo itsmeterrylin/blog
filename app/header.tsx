@@ -12,22 +12,29 @@ export function Header() {
         
         <Link
           href="/now"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] rounded-sm p-2 transition-[background-color]"
         >
           Now
         </Link>
 
         <Link
           href="/about"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] rounded-sm p-2 transition-[background-color]"
         >
           About
+        </Link>
+
+        <Link
+          href="/resume"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] rounded-sm p-2 transition-[background-color]"
+        >
+          Resume
         </Link>
         
         <a
           href="https://x.com/itsmeterrylin"
           target="_blank"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color]"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] items-center p-2 rounded-sm transition-[background-color]"
         >
           <TweetIcon />
         </a>
@@ -35,7 +42,7 @@ export function Header() {
         <a
           href="https://www.youtube.com/@terrysapartment"
           target="_blank"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color]"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] items-center p-2 rounded-sm transition-[background-color]"
         >
           <YouTubeIcon />
         </a>
@@ -43,7 +50,7 @@ export function Header() {
         <a
           href="https://www.linkedin.com/in/itsmeterrylin/"
           target="_blank"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] -mr-2"
+          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] items-center p-2 rounded-sm transition-[background-color] -mr-2"
         >
           <LinkedInIcon />
         </a>

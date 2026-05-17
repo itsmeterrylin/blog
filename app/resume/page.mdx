@@ -1,0 +1,130 @@
+export const metadata = {
+  title: 'Resume — Terry Lin',
+  description: 'Senior Product Manager based in New York, NY.',
+  openGraph: {
+    title: 'Resume — Terry Lin',
+    description: 'Senior Product Manager based in New York, NY.',
+  }
+}
+
+export const RoleHeader = ({ role, company, location, dates }) => (
+  <div className="mt-6 mb-2 overflow-x-auto">
+    <table className="w-full text-sm border-collapse">
+      <tbody>
+        <tr>
+          <td className="p-3 border border-gray-300 dark:border-gray-700 align-top w-1/2 font-semibold">
+            {role}{company && <> — <span className="font-normal">{company}</span></>}
+          </td>
+          <td className="p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4 text-gray-600 dark:text-gray-400">{location}</td>
+          <td className="p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4 text-gray-600 dark:text-gray-400 font-mono text-xs">{dates}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+)
+
+# Resume
+
+Senior Product Manager — New York, NY
+
+<a
+  href="/terry-lin-resume.pdf"
+  download
+  className="inline-flex items-center gap-2 px-3 py-1.5 my-4 rounded-sm border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-[#313131] active:bg-gray-200 dark:active:bg-[#242424] transition-[background-color] no-underline font-mono text-xs"
+>
+  Download PDF ↓
+</a>
+
+- **Email**: [terry.w.lin@gmail.com](mailto:terry.w.lin@gmail.com)
+- **LinkedIn**: [itsmeterrylin](https://www.linkedin.com/in/itsmeterrylin/)
+- **GitHub**: [itsmeterrylin](https://github.com/itsmeterrylin)
+
+## Summary
+
+Senior Product Manager currently shipping AI Webchat at Canary Technologies (NYC). Six prior years at CB Insights leading search and AI-powered reading tools. Comfortable building rapid prototypes with agentic AI tools like Cursor and Claude Code, debugging backend flows, and collaborating across the stack — database, API, middleware, web/mobile frontend. Outside work, foster volunteer at NYC Animal Care Center.
+
+## Skills
+
+<div className="my-6 overflow-x-auto">
+  <table className="w-full text-sm border-collapse">
+    <thead>
+      <tr className="bg-gray-100 dark:bg-[#1a1a1a]">
+        <th className="text-left font-semibold p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4">Product Strategy</th>
+        <th className="text-left font-semibold p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4">Prototyping & Vibe Coding</th>
+        <th className="text-left font-semibold p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4">Team Leadership</th>
+        <th className="text-left font-semibold p-3 border border-gray-300 dark:border-gray-700 align-top w-1/4">Business Intelligence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top">Idea validation & "Mom Test", product roadmapping, prioritization & tradeoffs, UX</td>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top">Cursor, Claude Code, V0, MCP, React, Tailwind, Python, Go, Swift UI, iOS, WatchOS, Supabase, PostHog, Railway, Vercel</td>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top">Stakeholder management, mentorship & coaching, executive communication, project management</td>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top">Datadog, Looker, Pendo, FullStory, Redash, Google Analytics</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Experience
+
+<RoleHeader role="Senior Product Manager, AI Webchat" company="Canary Technologies" location="New York, NY (Hybrid)" dates="Sep 2025 – Present" />
+
+YC-backed Series D company in hospitality AI.
+
+<RoleHeader role="Senior Product Manager" company="CB Insights" location="New York, NY (Hybrid)" dates="Jul 2019 – Sep 2025" />
+
+CB Insights helps customers understand technology markets and companies using generative AI, predictive data science, and machine learning.
+
+**Search Platform — increased click-through rates from 68% to 85%, boosting revenue retention**
+
+- Spearheaded enhancements by adding semantic search using OpenAI text embeddings to improve relevance by matching on similar keywords. Worked with data science, engineering, and design to lift CTR from 68% → 85% using semantic AI-powered vector search.
+- "Reinvented reading" with an AI-powered browser extension at 70% weekly retention, powered by Anthropic Sonnet 3.7. Developed the core prompt strategy and eval framework that compresses 7-minute business articles into personalized insights in seconds, tailored to each Fortune 500 customer.
+
+<RoleHeader role="Product Manager" company="SelfKey" location="New York, NY (Remote)" dates="Dec 2017 – Jun 2019" />
+
+Blockchain identity company empowering individuals and organizations to own their digital identities on Ethereum.
+
+<RoleHeader role="Product Manager" company="AMZ Tracker" location="Hong Kong, China" dates="Dec 2016 – May 2017" />
+
+E-commerce software for Amazon third-party sellers — launching products, monitoring competition, and growing reviews.
+
+<RoleHeader role="Founder" company="Forever Home Blankets" location="Saigon, Vietnam" dates="Feb 2015 – Oct 2016" />
+
+Kickstarter campaign that exceeded its fundraising goal by 301% — 0 to 1.
+
+<RoleHeader role="Corporate Access" company="UBS Investment Bank" location="Taipei, Taiwan" dates="Nov 2009 – Aug 2013" />
+
+Institutional equities — research, trading, and execution services to hedge funds, mutual funds, and sovereign wealth funds.
+
+## Side Projects
+
+- **[Copper's Corner](https://www.copperscorner.com/)** — Voice-first iOS & Apple Watch gym logger. Recognizes 1,000+ exercises (barbells, machines, cardio), tracks PRs and tempo automatically. Shipped to the App Store.
+- **[prd-powerbomb](https://github.com/itsmeterrylin/prd-powerbomb)** — Open-source PRD rules for LLM coding agents. 50+ GitHub stars.
+- **[NotHotDog](https://github.com/itsmeterrylin/NotHotDog)** — iOS app that tells you if it's a hotdog. Or not a hotdog.
+
+## Volunteer
+
+- **Foster Volunteer, NYC Animal Care Center** — New York, NY · Sep 2021 – Present. ~35 foster kittens per year.
+- **Foster Volunteer, ARC Vietnam (Animal Rescue & Care)** — Jan 2015 – Nov 2016.
+
+## Languages
+
+English (native), Mandarin (full professional proficiency)
+
+## Education
+
+<div className="my-6 overflow-x-auto">
+  <table className="w-full text-sm border-collapse">
+    <tbody>
+      <tr>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top w-1/2"><strong>Bachelor's Degree, Economics</strong></td>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top w-1/2 text-gray-600 dark:text-gray-400">Whittier College — Whittier, CA</td>
+      </tr>
+      <tr>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top"><strong>Study Abroad</strong></td>
+        <td className="p-3 border border-gray-300 dark:border-gray-700 align-top text-gray-600 dark:text-gray-400">Jönköping International Business School — Jönköping, Sweden</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
