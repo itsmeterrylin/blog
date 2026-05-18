@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 
 const theme: { light: string[]; dark: string[] } = {
-  light: ["#e8e6dc", "#d1cfc5", "#b0aea5", "#5e5d59", "#1f1e1d"],
-  dark: ["#3d3d3a", "#5e5d59", "#87867f", "#b0aea5", "#faf9f5"],
+  light: ["#e8e6dc", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+  dark: ["#3d3d3a", "#0e4429", "#006d32", "#26a641", "#39d353"],
 };
 
 function readScheme(): "light" | "dark" {
