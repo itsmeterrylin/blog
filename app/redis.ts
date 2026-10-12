@@ -38,16 +38,41 @@ class MockRedis {
   }
 }
 
+// View counts and the tweet cache are nice-to-have. If Redis is unreachable (for example the database was
+// removed), log once per call and return an empty result so pages and builds keep working.
+const REDIS_TIMEOUT_MS = 3000;
+
+function failSoft<T extends object>(client: T): T {
+  return new Proxy(client, {
+    get(target, prop, receiver) {
+      const value = Reflect.get(target, prop, receiver);
+      if (typeof value !== "function") return value;
+      return async (...args: unknown[]) => {
+        try {
+          return await Promise.race([
+            value.apply(target, args),
+            new Promise((_, reject) => setTimeout(() => reject(new Error("timed out")), REDIS_TIMEOUT_MS)),
+          ]);
+        } catch (error) {
+          console.warn(`Redis ${String(prop)} failed; continuing without it:`, (error as Error).message);
+          return null;
+        }
+      };
+    },
+  });
+}
+
 let redis;
 
 if (!process.env.UPSTASH_REDIS_REST_TOKEN) {
   console.warn("⚠️ UPSTASH_REDIS_REST_TOKEN not found, using mock Redis for development");
   redis = new MockRedis();
 } else {
-  redis = new Redis({
+  redis = failSoft(new Redis({
     url: "https://huge-grouse-46387.upstash.io",
     token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  });
+    retry: false,
+  }));
 }
 
 export default redis;
