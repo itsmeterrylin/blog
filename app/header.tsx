@@ -1,6 +1,5 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Logo } from "./logo";
-import Link from "next/link";
 
 export function Header() {
   return (
@@ -9,13 +8,6 @@ export function Header() {
 
       <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
         <ThemeToggle />
-        
-        <Link
-          href="/now"
-          className="inline-flex hover:bg-[#e8e6dc] dark:hover:bg-[#3d3d3a] active:bg-[#d1cfc5] dark:active:bg-[#5e5d59] rounded-sm p-2 transition-[background-color]"
-        >
-          Now
-        </Link>
         
         <a
           href="https://x.com/itsmeterrylin"
