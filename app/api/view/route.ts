@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
   }
 
   if (url.searchParams.get("incr") != null) {
-    const views = await redis.hincrby("views", id, 1);
+    const views = (await redis.hincrby("views", id, 1)) ?? 0;
     return NextResponse.json({
       ...post,
       views,
