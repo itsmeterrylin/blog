@@ -1,37 +1,57 @@
+import Image from "next/image";
 import { GitHubContributionGraph } from "../github-calendar";
 import { YouTubeLatest } from "../youtube-latest";
 
 export const metadata = {
-  title: 'Now',
-  description: 'What Terry Lin is focused on now',
+  title: 'Terry Lin',
+  description: 'Senior Product Manager in NYC. Building Copper, fostering kittens.',
   openGraph: {
-    title: 'Now',
-    description: 'What Terry Lin is focused on now',
+    title: 'Terry Lin',
+    description: 'Senior Product Manager in NYC. Building Copper, fostering kittens.',
+    images: [{ url: '/about/opengraph-image' }]
   }
 }
 
-# Now
+# Terry Lin
+
+<div className="float-right ml-5 mb-5">
+  <Image
+    src="/images/terry-avatar.jpg"
+    alt="Terry Lin"
+    width={160}
+    height={160}
+    className="rounded-full object-cover"
+    priority
+  />
+</div>
+
+Senior Product Manager based in NYC. Currently building AI Webchat at [Canary Technologies](https://www.canarytechnologies.com/). Previously six years at CB Insights on search and AI-powered reading tools.
+
+Outside work I ship [Copper](https://www.copperscorner.com/) ([App Store](https://apps.apple.com/us/app/coppers-corner/id6745196643)), a voice-first iOS + Apple Watch workout tracker, and foster kittens through [NYC Animal Care Center](https://www.nycacc.org/) — ~100 over four years.
+
+- **X/Twitter**: [@itsmeterrylin](https://x.com/itsmeterrylin)
+- **GitHub**: [itsmeterrylin](https://github.com/itsmeterrylin)
+- **LinkedIn**: [itsmeterrylin](https://www.linkedin.com/in/itsmeterrylin/)
+- **YouTube**: [@terrysapartment](https://www.youtube.com/@terrysapartment)
+
+## Now
 
 *A [now page](https://nownownow.com/about) in the style of [Derek Sivers](https://sive.rs/now). Last updated May 2026.*
 
-## Working on
+### Working on
 
 **Day job:** Senior PM, AI Webchat at Canary Technologies (NYC).
 
 **Building:** [Copper](https://www.copperscorner.com/) ([App Store](https://apps.apple.com/us/app/coppers-corner/id6745196643)) — voice-first iOS + Apple Watch workout tracker. Shipped v1.0.10. 1,000+ exercises, Apple Watch heart-rate capture, Strong/Hevy CSV import. Free through June 30, 2026.
 
-## Code
+### Code
 
 <GitHubContributionGraph username="itsmeterrylin" />
 
-## Home
+### Home
 
 NYC since 2017. Rescue dog Copper (Puerto Rico street dog), cat Jade (former teen mom from NYC ACC). Close to 100 foster kittens through ACC over four years.
 
-## Foster Kitten Livestream
+### Foster Kitten Livestream
 
 <YouTubeLatest />
-
-## Next
-
-Growth on Copper before paid tier kicks in: ASO, screenshots, weekly-active logger count.
